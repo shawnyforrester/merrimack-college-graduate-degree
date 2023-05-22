@@ -88,18 +88,32 @@ class LinkedList:
         
         else:
             current = self.head
-            while(current.next is not None and current.data !=value):
+            while(current.next is not None and current.data < value):
                 current = current.next            
                 
-            if current.next is None:
+            if current.next is None and current.data < value:
                 current.next = new_node
                 new_node.previous = current
                 new_node.next = None
+            
+            if current.next is None and current.data > value:
+                new_node.next = current
+                new_node.previous = current.previous
+                current.previous.next = new_node
+                current.previous = new_node
+                
+                
+            if current.next is not None and current.data > value:
+                new_node.next = current
+                new_node.previous = current.previous
+                current.previous.next = new_node
+                current.previous = new_node
                                  
             if current.data == value:
                 current.next.previous = current.previous
                 current.previous.next = current.next
-                current = None    
+                current = None   
+                print("This", value, "is already in the list. It has been removed.")
                 
             
                  
