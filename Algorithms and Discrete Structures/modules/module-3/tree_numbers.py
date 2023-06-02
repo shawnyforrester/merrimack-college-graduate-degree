@@ -96,9 +96,7 @@ class Tree:
         print("==========")
         
     def create_matrix(self, number):
-        matrix = []
-        for i in range(number):
-            matrix.append([0]*number)
+        matrix = [[0 for i in range(number)] for j in range(number)]
         return matrix
     
     def print_matrix(self):
@@ -115,6 +113,7 @@ class Tree:
                         current_left = n.left.data
                         left_weight = abs(current - current_left)
                         index_left = input_data.index(current_left)
+                        matrix[self.iteration][index_left] = left_weight
                     except:
                         pass
                     

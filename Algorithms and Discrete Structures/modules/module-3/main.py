@@ -6,8 +6,10 @@ from tree_numbers import Tree
 
 def read_data():
     """Reads the data from the numbers.txt file and returns it as a list"""
+    data = []
     with open("numbers.txt", "r") as f:
-        data = f.read().splitlines()
+        for line in f:
+            data.append(int(line))
     return data
 
 def main():
@@ -21,7 +23,7 @@ def main():
     tree.printInorder()
     tree.printPreorder()
     tree.printPostorder()
-    print(tree.check_level(2))#checks the depth of a particular value       
+    print(tree.check_level(8))#checks the depth of a particular value       
      
     #create a graph from the tree
     tree.print_matrix()
