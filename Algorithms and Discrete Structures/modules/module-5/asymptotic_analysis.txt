@@ -1,0 +1,38 @@
+def power_function(x, p):  
+    result = 1
+    if p == 0:
+        return 1
+    elif x == 0:
+        return 0
+    elif p > 0 and x > 0:                          
+        for i in range(p):
+            result *= x
+        return result
+    else:
+        print("Error: Invalid input. Please enter a real number x and a non-negative integer p.")
+
+
+
+
+def polynomial_function(A, x):
+    function_degree = len(A) -1
+    result = 0
+    for i, coefficient in enumerate(A):
+        value = coefficient * power_function(x, function_degree - i)
+        result += value
+    return round(result, 2)      
+
+    Asymptotic Analysis:
+    
+    Line        Work
+    9           n
+    21          n*n 
+    22          n
+
+    Total work T(n) = n + n^2 + n (Maximum number of multiplications)
+                    = 2n + n^2
+                T(n)< 2n^2 + n^2
+                    < 3n^2
+                T(n)< O(n^2)
+
+                     
