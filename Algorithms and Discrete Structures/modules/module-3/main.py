@@ -10,7 +10,7 @@ def read_data():
     data = []
     with open("numbers.txt", "r") as f:
         for line in f:
-            data.append(int(line))
+            data.append(line.strip())
     return data
 
 
@@ -28,7 +28,7 @@ def main():
     print(tree.check_level(8))  # checks the depth of a particular value
 
     #create a graph from the tree
-    tree.print_matrix()
+    tree.create_adjacency_matrix()
 
 
 if __name__ == "__main__":

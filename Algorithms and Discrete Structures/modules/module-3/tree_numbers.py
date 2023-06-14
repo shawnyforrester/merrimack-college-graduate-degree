@@ -2,21 +2,24 @@
 a binary search tree from the numbers."""
 
 
+import math
+
+
 class Node:
-    def __init__(self, value):
+    def __init__(self, value=None):
         self.data = value
         self.left = None
         self.right = None
 
 
 class Tree:
-    def __init__(self,data, value=None):
-        self.iteration = 0
-        self.data = data
-        if (value == None):
-            self.root = None
-        else:
-            self.root = Node(value)
+    def __init__(self, data_set):
+        # self.iteration = 0
+        self.data_set = data_set
+        # if (value == None):
+        #     self.root = None
+        # else:
+        self.root = Node()
 
     def insert(self, value):
         def insert_here(node, value):
@@ -98,43 +101,77 @@ class Tree:
         __visit__(self.root, 0)
         print("==========")
 
-    def create_matrix(self, number):
-        matrix = [[0 for i in range(number)] for j in range(number)]
-        return matrix
+    # def create_matrix(self, number):
+    #     matrix = [[0 for i in range(number)] for j in range(number)]
+    #     return matrix
 
-    def print_matrix(self):
-        matrix  = self.create_matrix(len(self.data))
+    # def print_matrix(self):
+    #     matrix  = self.create_matrix(len(self.data))
 
-        def __visit__(n, matrix):
-            if n is not None:
+    #     def __visit__(n, matrix):
+    #         if n is not None:
 
-                if n.left is not None or n.right is not None:
-                    current = n.data
-                    input_data = self.data
+    #             if n.left is not None or n.right is not None:
+    #                 current = n.data
+    #                 input_data = self.data
 
-                    try:
-                        current_left = n.left.data
-                        left_weight = abs(current - current_left)
-                        index_left = input_data.index(current_left)
-                        matrix[self.iteration][index_left] = left_weight
-                    except:
-                        pass
+    #                 try:
+    #                     current_left = n.left.data
+    #                     left_weight = abs(current - current_left)
+    #                     index_left = input_data.index(current_left)
+    #                     matrix[self.iteration][index_left] = left_weight
+    #                 except:
+    #                     pass
 
-                    try:
-                        current_right = n.right.data
-                        right_weight = abs(current - current_right)
-                        index_right = input_data.index(current_right)
-                        matrix[self.iteration][index_right] = right_weight
-                    except:
-                        pass
-                    self.iteration += 1
-            else:
-                self.iteration += 1
+    #                 try:
+    #                     current_right = n.right.data
+    #                     right_weight = abs(current - current_right)
+    #                     index_right = input_data.index(current_right)
+    #                     matrix[self.iteration][index_right] = right_weight
+    #                 except:
+    #                     pass
+    #                 self.iteration += 1
+    #         else:
+    #             self.iteration += 1
 
-            __visit__(n.left, matrix)
-            __visit__(n.right, matrix)
+    #         __visit__(n.left, matrix)
+    #         __visit__(n.right, matrix)
 
-        print("\n----------")
-        __visit__(self.root, matrix)
-        print(matrix)
-        print("\n----------")
+    #     print("\n----------")
+    #     __visit__(self.root, matrix)
+    #     print(matrix)
+    #     print("\n----------")
+
+    def create_adjacency_matrix(self):
+    # Initialize a 2D matrix of size 31x31 filled with zeros
+        adjacency_matrix = [[0] * len(self.data_set) for _ in range(len(self.data_set))]
+
+    # Helper function to fill the adjacency matrix recursively
+        def fill_adjacency_matrix(node): 
+            if node.left is not None or node.right is not None:
+                current = node                      
+                   
+            if current.data < len(self.data_set):
+                adjacency_matrix[current.data][current.data.left] = abs(current.data - current.left.data)
+                adjacency_matrix[current.data][current.data.right] = abs(current.data - current.right.data)                
+                fill_adjacency_matrix(current.left)
+                fill_adjacency_matrix(current.right)
+
+    # Start filling the adjacency matrix from the root node at index 0
+        fill_adjacency_matrix(self.root)
+
+    # Print the adjacency matrix
+        for row in adjacency_matrix:
+            print(' '.join(map(str, row)))
+
+# Call the function to create and print the adjacency matrix
+    # create_adjacency_matrix()
+
+""""
+vist(self.root)
+    if node.left is not None or node.right is not None:
+        current = node.data
+        x coordinate is current.data
+        y coordinate is the child node data (either current.left.data or current.right.data))
+        The value of the edge is current.data - current.left.data or current.data - current.right.data
+        The index of [x][y] = value of the edge"""
