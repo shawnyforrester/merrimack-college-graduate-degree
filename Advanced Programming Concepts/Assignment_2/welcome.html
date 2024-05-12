@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" initial-scale="1.0" />
+    <link rel="stylesheet" type="text/css" href="welcome.css" />
+  </head>
+  <body>
+    <h1><b>Welcome to my webpage!</b></h1>
+    <div class="button-container">
+      <button class="button">Change background</button>
+      <button class="button">Display message</button>
+    </div>
+    <!-- changes the background color of the page to a orange and displays "Hello World" below the buttons. -->
+    <script>
+      const buttons = document.querySelectorAll(".button");
+      const body = document.querySelector("body");
+      const h1 = document.querySelector("h1");
+      buttons[0].addEventListener("click", () => {
+        body.style.backgroundColor = "orange";
+      });
+      buttons[1].addEventListener("click", () => {
+        const newBox = document.createElement("h2");
+        document.body.appendChild(newBox);
+        newBox.setAttribute("class", "new-box");
+        newBox.innerHTML = "Hello, World!";
+      });
+    </script>
+  </body>
+</html>

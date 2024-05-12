@@ -1,0 +1,41 @@
+<!-- Namw: Shawn Forrester-->
+
+<!-- HTML Template starts here -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prime Number</title>
+    <script>
+        // This function takes the value entered by the user and checks if it is a prime number or not.
+        function isPrime() {
+            var num = document.getElementById("number").value;
+            var flag = 0;
+            if(num <= 1){
+                document.getElementById("result").innerHTML = " is not a prime number";
+                return;
+            }           
+            for (var i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i == 0) {
+                    flag = 1;
+                    break;
+                }
+            }
+            // The result is displayed on the page here
+            if (flag == 0) {
+                document.getElementById("result").innerHTML = num + " is a prime number";
+            } else {
+                document.getElementById("result").innerHTML = num + " is not a prime number";
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- User data accepted here -->
+    <h1>Prime Number</h1>
+    <p>Enter a number between 2 and 9999:</p>
+    <input type="number" id="number">
+    <button onclick="isPrime()">Check</button>
+    <p id="result"></p>
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+.container {
+  position: relative;
+}
+.box3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 75vw;
+  background-color: red;
+  z-index: 0;
+}
+.box2 {
+  position: absolute;
+  height: 25vh;
+  width: 50vw;
+  background-color: blue;
+  z-index: 1;
+}
+.box1 {
+  position: absolute;
+  height: 12.5vh;
+  width: 25vw;
+  background-color: yellow;
+  z-index: 2;
+}

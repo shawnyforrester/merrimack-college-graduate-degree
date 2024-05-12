@@ -1,0 +1,41 @@
+<!-- # Name: Shawn Forrester # REST API Version: 1.0 #
+API:https://api.weather.gov/ (v1.1) # Description: This program will connect to the weather.gov API and
+retrieve the weather for a given location. # The user will be prompted to enter
+a an office ID and grid locations X and Y.The program will return the current
+weather for that location in default GeoJSON format. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>  
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>    
+    <div class="form">
+        <h2>Weather Center</h2>
+        <label>Office ID</label>
+        <input type="text" placeholder="Office ID" id="office_id"></input>
+        <label>Grid X Location</label>
+        <input type="text" placeholder="Grid X Location"  id="grid_x"></input>
+        <label>Grid Y Location</label>
+        <input type="text" placeholder="Grid Y Location" id="grid_y"></input>
+        <br>
+        <button id="get_weather" onclick="getWeather()">Get Weather</button>
+        <div class="forecast" id="forecast"></div>
+        <div class="forecast"id="temperature"></div>
+        <div class="forecast" id="speed"></div>
+        <div class="forecast" id="direction"></div>
+        <br>
+        <button id="get_location" onclick="getLocation()">Get Location</button>
+        <div id="location"></div>
+        <spam id="coord"></spam></p>
+        <div class="container">            
+            <div id="barv"></div>
+            <div id="barh"></div>
+        </div>
+    </div>  
+    <script src="script.js"></script>
+  </body>
+</html>

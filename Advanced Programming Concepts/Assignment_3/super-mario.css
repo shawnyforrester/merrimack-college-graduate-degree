@@ -1,0 +1,132 @@
+.container {
+    display: flex;
+    padding: 5%;
+    align-items: center;
+    justify-content: center;
+}
+body{    
+    background-image: url('./assets/images/mario-bg.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.button{
+    background-color: transparent;
+    border: transparent;
+}
+.button:hover{
+    cursor: pointer;
+    border: solid 1px white;
+}
+
+h1{
+    color: white;
+    font-size: 2rem;  
+    text-shadow: 2px 2px 4px rgba(80, 40, 40, 40); /* Shadow effect */     
+}
+h2{
+    color: white;
+    font-size: 2rem;  
+    text-shadow: 2px 2px 4px rgba(80, 40, 40, 40); /* Shadow effect */   
+    text-decoration-color: chocolate;
+    position: absolute;
+    left: 40%;
+}
+p{
+    color: white;
+    font-size: 1rem;
+    animation: blink 2s infinite; /* Example animation */
+}
+.mario {   
+    position: absolute;   
+    top: 40%;
+    animation: marioWalk 1s infinite alternate; /* Example animation */
+    width: 300px; 
+    height: 300px;
+}
+.logo {  
+    width: 500px;
+    height: 300px;
+}
+
+
+.game-header{   
+    display: inline-flex;
+    justify-content: space-evenly;
+    width: 100%;
+
+}
+.mushroom {  
+    animation: mushroomJump 1s infinite alternate; /* Example animation */
+    width: 200px; 
+    height: 200px;
+    position: absolute;
+    left: 10%;
+    top: 50%;
+}
+.kopa {
+    position: absolute;
+    bottom: 100%;
+    left: -50%;
+    width: 200px; 
+    height: 200px;
+    animation: flyIn 40s forwards infinite; /* Adjust timing as needed */
+}
+
+@keyframes flyIn {
+    0% {
+        transform: translate(60vw, 100vh); /* Move image off-screen at the bottom */
+    }
+    100% {
+        transform: translate(100vw, 0); /* Move image to the top right corner */
+    }
+}
+
+
+@keyframes marioWalk {
+    from {
+        transform: translateX(10px);
+    }
+    to {
+        transform: translateX(180px);
+    }
+}
+
+@keyframes mushroomJump {
+    0% {
+        transform: translateY(-80px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+    
+}
+
+/* Define wiggle animation */
+@keyframes wiggle {
+    0% {
+        transform: rotateZ(-5deg); /* Rotate text 5 degrees clockwise */
+    }
+    50% {
+        transform: rotateZ(5deg); /* Rotate text 5 degrees counterclockwise */
+    }
+    100% {
+        transform: rotateZ(-5deg); /* Rotate text 5 degrees clockwise */
+    }
+}

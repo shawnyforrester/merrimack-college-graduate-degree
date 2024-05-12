@@ -1,0 +1,53 @@
+<!-- Name: Shawn Forrester
+Assignment: 3
+Super Mario Adeventure Park -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Super Mario Characters</title>
+    <link rel="stylesheet" type="text/css" href="super-mario.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="game-header">
+        <div>
+          <h1 id="Player1">Player 1</h1>
+          <button
+            class="button"
+            onclick="document.getElementById('Player1').style.color = 'red'; 
+              document.getElementById('Player1').style.animation='wiggle 0.1s alternate';
+            document.getElementById('title').style.animation='wiggle 0.1s alternate'"
+          >
+            <p><strong>Push Start</strong></p>
+          </button>
+        </div>
+        <div>
+          <img
+            src="./assets/images/super-mario-logo.png"
+            alt="logo"
+            class="logo"
+          />
+          <h2 id="title">Adventure Park</h2>
+        </div>
+        <div>
+          <h1 id="Player2">Player 2</h1>
+          <button
+            class="button"
+            onclick="document.getElementById('Player2').style.color = 'red'; 
+            document.getElementById('Player2').style.animation='wiggle 0.1s alternate';
+            document.getElementById('title').style.animation='wiggle 0.1s alternate'"
+          >
+            <p><strong>Push Start</strong></p>
+          </button>
+        </div>
+      </div>
+      <img src="./assets/images/mario.png" alt="Mario" class="mario" />
+      <img src="./assets/images/mushroom.png" alt="Mushroom" class="mushroom" />
+      <img src="./assets/images/kopa.png" alt="kopa" class="kopa" />
+      <!-- Add more characters as needed -->
+    </div>
+  </body>
+</html>

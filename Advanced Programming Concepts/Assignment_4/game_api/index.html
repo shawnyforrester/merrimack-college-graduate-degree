@@ -1,0 +1,47 @@
+<!-- Name: Shawn Forrester
+API: https://api.rawg.io/api/games -->
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game API</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- navigation and search bar section -->
+    <section>
+      <div class="nav-bar">
+        <div>
+          <!-- image -->
+          <img class="logo" src="./assets/game-logo.jpg" alt="logo" />
+        </div>
+        <div>
+          <!-- search bar -->
+          <input class="search-bar" type="search" placeholder="Search" />
+          <button type="submit" id="search-button" class="search-button">
+            Search Games
+          </button>
+        </div>
+        <div class="dark-mode">
+          <img
+            class="dark-mode-toggle"
+            src="./assets/dark-mode.png"
+            alt="dark-mode"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="game-category-container">
+      <!-- side bar for categories -->
+      <div id="genre-list" class="category-sidebar">
+        <h1 style="font-size: 2rem">Categories</h1>
+      </div>
+      <!-- game display section  -->
+      <div id="game-grid" class="game-grid">
+        <!-- game card -->
+      </div>
+    </section>
+    <script src="index.js"></script>
+  </body>
+</html>
